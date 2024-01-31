@@ -10,4 +10,9 @@ public class Calculator : ControllerBase
     {
         return number1 + number2;
     }
+    [HttpGet("Subtract")]
+    public ActionResult<decimal> Add(decimal number1, decimal number2)
+    {
+        return number1 - number2;
+    }
 }
