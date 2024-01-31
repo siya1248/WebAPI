@@ -20,4 +20,22 @@ public class Calculator : ControllerBase
     {
         return number1 * number2;
     }
+    [HttpGet("Divide")]
+    public ActionResult<decimal> Divide(decimal number1, decimal number2)
+    {
+        if(number2==0)
+        {
+            return BadRequest("Can't divided by zero");
+        }
+        return number1 / number2;
+    }
+    [HttpGet("Modulo")]
+    public ActionResult<decimal> Modulo(decimal number1, decimal number2)
+    {
+        if(number2==0)
+        {
+            return BadRequest("Can't find out modulo");
+        }
+        return number1 % number2;
+    }
 }
